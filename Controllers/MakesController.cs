@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Vega.Core.Models;
 using Vega.Persistence;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,7 +17,7 @@ namespace Vega.Controllers
     {
         private readonly VegaDbContext context;
 
-        public MakesController(VegaDbContext context)
+        public MakesController(VegaDbContext context, IMapper mapper)
         {
             this.context = context;
         }
