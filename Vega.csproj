@@ -41,4 +41,5 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
+  <ProjectExtensions><VisualStudio><UserProperties _1angular-cli_1json__JSONSchema="node_modules\@angular\cli\lib\config\schema.json" /></VisualStudio></ProjectExtensions>
 </Project>
