@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { sharedConfig } from './app.module.shared';
 import { MakeService } from "./services/make.service";
+import { FeatureService } from "./services/feature.service";
 
 @NgModule({
     bootstrap: sharedConfig.bootstrap,
@@ -16,7 +17,8 @@ import { MakeService } from "./services/make.service";
     ],
     providers: [
         { provide: 'ORIGIN_URL', useValue: location.origin },
-        MakeService
+        MakeService,
+        FeatureService
     ]
 })
 export class AppModule {
