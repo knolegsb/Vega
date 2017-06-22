@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { sharedConfig } from './app.module.shared';
 import { MakeService } from "./services/make.service";
 import { FeatureService } from "./services/feature.service";
+import { VehicleService } from "./services/vehicle.service";
 
 @NgModule({
     bootstrap: sharedConfig.bootstrap,
@@ -18,7 +19,8 @@ import { FeatureService } from "./services/feature.service";
     providers: [
         { provide: 'ORIGIN_URL', useValue: location.origin },
         MakeService,
-        FeatureService
+        FeatureService,
+        VehicleService
     ]
 })
 export class AppModule {
