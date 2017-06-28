@@ -26,6 +26,6 @@ export interface SaveVehicle {
     modelId: number;
     makeId: number;
     isRegistered: boolean;
-    feature: number[];
+    features: number[];
     contact: Contact;
 }
