@@ -50,7 +50,17 @@ export class VehicleFormComponent implements OnInit {
         //this.vehicleService.getMakes().subscribe(makes => 
         //    this.makes = makes
         //    );
-        //this.vehicleService.getFeatures().subscribe(features => this.features = features);
+        //this.vehicleService.getFeatures().subscribe(features => 
+        //    this.features = features
+        //    );
+
+        this.vehicleService.getVehicle(this.vehicle.id)
+            .subscribe(v => {
+                this.vehicle = v;
+            }, err => {
+                if (err.status == 400)
+                    this.router.navigate(['/not-found']);
+            });
 
         var sources = [
             this.vehicleService.getMakes(),
@@ -60,11 +70,27 @@ export class VehicleFormComponent implements OnInit {
         if (this.vehicle.id)
             sources.push(this.vehicleService.getVehicle(this.vehicle.id));
 
+        //Observable.forkJoin([
+        //    this.vehicleService.getMakes(),
+        //    this.vehicleService.getFeatures(),
+        //    this.vehicleService.getVehicle(this.vehicle.id)
+        //]).subscribe(data => {
+        //    this.makes = data[0];
+        //    this.features = data[1];
+        //    this.vehicle = data[2];
+        //}, err => {
+        //    if (err.status == 404)
+        //        this.router.navigate(['/home']);
+        //});
+
         Observable.forkJoin(sources).subscribe(data => {
             this.makes = data[0];
             this.features = data[1];
 
             if (this.vehicle.id) {
+                //this.vehicle.id = data[2].id;
+                //this.vehicle.makeId = data[2].make.id;
+                //this.vehicle.modelId = data[2].model.id;
                 this.setVehicle(data[2]);
                 this.populateModels();
             }
