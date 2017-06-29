@@ -1,4 +1,5 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import * as _ from 'underscore';
+import { Component, OnInit } from '@angular/core';
 import { MakeService } from './../../services/make.service';
 import { FeatureService } from "../../services/feature.service";
 import { VehicleService } from "../../services/vehicle.service";
@@ -7,7 +8,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ToastyService } from 'ng2-toasty';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/Observable/forkJoin';
-import * as _ from 'underscore';
 
 @Component({
     selector: 'app-vehicle-form',
