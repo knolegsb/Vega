@@ -5,16 +5,16 @@ import { OnChanges } from '@angular/core';
     selector: 'pagination',
     template: `
         <nav *ngIf="totalItems > pageSize">
-            <ul class="paginatioin">
+            <ul class="pagination">
                 <li [class.disabled]="currentPage == 1">
-                    <a (click)="previous()" aria=label="Previous">
+                    <a (click)="previous()" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
                 <li [class.active]="currentPage == page" *ngFor="let page of pages" (click)="changePage(page)">
                     <a>{{ page }}</a>
                 </li>
-                <li [class.disabled]="currentPage == page.length">
+                <li [class.disabled]="currentPage == pages.length">
                     <a (click)="next()" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>

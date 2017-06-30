@@ -3,7 +3,7 @@ import { VehicleService } from './../../services/vehicle.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    templateUrl: 'vehicle-list.html';
+    templateUrl: 'vehicle-list.html'
 })
 
 export class VehicleListComponent implements OnInit {
