@@ -8,6 +8,8 @@ namespace Vega.Core.Models
 {
     public class VehicleQuery : IQueryObject
     {
+        // filter
+
         public int? MakeId { get; set; }
         public int? ModelId { get; set; }
         public string SortBy { get; set; }
