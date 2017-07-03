@@ -74,7 +74,8 @@ namespace Vega.Persistence
             {
                 ["make"] = v => v.Model.Make.Name,
                 ["model"] = v => v.Model.Name,
-                ["contactName"] = v => v.ContactName
+                ["contactName"] = v => v.ContactName,
+                ["id"] = v => v.Id
             };
 
             query = query.ApplyOrdering(queryObj, columnsMap);
