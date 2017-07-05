@@ -19,6 +19,8 @@ namespace Vega.Controllers
     [Route("api/[controller]/{vehicleId}/photos")]
     public class PhotosController : Controller
     {
+        private readonly int MAX_BYTES = 1 * 1024 * 1024;
+
         private readonly IPhotoService photoService;
         private readonly PhotoSettings photoSettings;
         private readonly IMapper mapper;
@@ -60,6 +62,5 @@ namespace Vega.Controllers
 
             return Ok(mapper.Map<Photo, PhotoResource>(photo));
         }
-
     }
 }
